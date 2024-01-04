@@ -1,26 +1,37 @@
-﻿using System.Windows;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using WiredBrainCoffee.CustomersApp.Data;
+using WiredBrainCoffee.CustomersApp.ViewModel;
 
 namespace WiredBrainCoffee.CustomersApp.View
 {
-  public partial class CustomersView : UserControl
-  {
-    public CustomersView()
+    public partial class CustomersView : UserControl
     {
-      InitializeComponent();
+        private CustomersViewModel _viewModel;
+
+        public CustomersView()
+        {
+            InitializeComponent();
+            _viewModel = new CustomersViewModel(new CustomerDataProvider());
+            DataContext = _viewModel;
+            Loaded += CustomersView_LoadedAsync;
+        }
+
+        private async void CustomersView_LoadedAsync(object sender, RoutedEventArgs e)
+        {
+            await _viewModel.LoadAsync();
+        }
+
+        private void ButtonMoveNavigation_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.MoveNavigation();
+        }
+
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Add();
+        }
     }
-
-    private void ButtonMoveNavigation_Click(object sender, RoutedEventArgs e)
-    {
-      //var column = (int)customerListGrid.GetValue(Grid.ColumnProperty);
-
-      //var newColumn = column == 0 ? 2 : 0;
-      //customerListGrid.SetValue(Grid.ColumnProperty, newColumn);
-
-      var column = Grid.GetColumn(customerListGrid);
-
-      var newColumn = column == 0 ? 2 : 0;
-      Grid.SetColumn(customerListGrid, newColumn);
-    }
-  }
 }
