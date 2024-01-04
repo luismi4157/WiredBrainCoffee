@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace WiredBrainCoffee.CustomersApp.Controls
 {
-    /// <summary>
-    /// Interaction logic for HeaderControl.xaml
-    /// </summary>
-    public partial class HeaderControl : UserControl
+  /// <summary>
+  /// Interaction logic for HeaderControl.xaml
+  /// </summary>
+  public partial class HeaderControl : UserControl
+  {
+    public HeaderControl()
     {
-        public HeaderControl()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
     }
+  }
 }
