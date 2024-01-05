@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WiredBrainCoffee.CustomersApp.View"
+             xmlns:local="clr-namespace:WiredBrainCoffee.CustomersApp.View" 
+             xmlns:converter="clr-namespace:WiredBrainCoffee.CustomersApp.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:NavigationSideToGridColumnConverter x:Key="NavigationSideToGridColumnConverter"/>
+    </UserControl.Resources>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="Auto"/>
@@ -15,7 +19,7 @@
 
     <!-- Customer list -->
     <Grid Background="#777"
-          Grid.Column="{Binding NavigationColumnSide}">
+          Grid.Column="{Binding NavigationColumnSide, Converter={StaticResource NavigationSideToGridColumnConverter}}">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition/>

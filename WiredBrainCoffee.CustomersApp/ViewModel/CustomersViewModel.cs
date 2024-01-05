@@ -65,13 +65,15 @@ namespace WiredBrainCoffee.CustomersApp.ViewModel
 
         internal void MoveNavigation()
         {
-            NavigationColumnSide = NavigationColumnSide == NavigationSide.Left ? NavigationSide.Right : NavigationSide.Left;
+            NavigationColumnSide = NavigationColumnSide == NavigationSide.Left 
+                ? NavigationSide.Right 
+                : NavigationSide.Left;
         }
 
         public enum NavigationSide
         {
-            Left = 0,
-            Right = 2
+            Left,
+            Right
         }
     }
 }
