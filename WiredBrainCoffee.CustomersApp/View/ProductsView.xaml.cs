@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace WiredBrainCoffee.CustomersApp.View
 {
-    /// <summary>
-    /// Interaction logic for ProductsView.xaml
-    /// </summary>
-    public partial class ProductsView : UserControl
+  /// <summary>
+  /// Interaction logic for ProductsView.xaml
+  /// </summary>
+  public partial class ProductsView : UserControl
+  {
+    public ProductsView()
     {
-        public ProductsView()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
     }
+  }
 }

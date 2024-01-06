@@ -1,6 +1,6 @@
 ﻿namespace WiredBrainCoffee.CustomersApp.ViewModel
 {
-    public class ProductsViewModel : ViewModelBase
-    {
-    }
+  public class ProductsViewModel : ViewModelBase
+  {
+  }
 }

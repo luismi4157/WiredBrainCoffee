@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace WiredBrainCoffee.CustomersApp.ViewModel
 {
-    public class ViewModelBase : INotifyPropertyChanged
+  public class ViewModelBase : INotifyPropertyChanged
   {
     public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -13,6 +14,6 @@ namespace WiredBrainCoffee.CustomersApp.ViewModel
       PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-        public virtual Task LoadAsync() => Task.CompletedTask;
-    }
+    public virtual Task LoadAsync() => Task.CompletedTask;
+  }
 }

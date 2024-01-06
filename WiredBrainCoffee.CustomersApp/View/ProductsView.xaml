@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:WiredBrainCoffee.CustomersApp.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Products"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-    </Grid>
+  <Grid>
+    <TextBlock Text="Products"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+  </Grid>
 </UserControl>
